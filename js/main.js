@@ -18,22 +18,30 @@ window.addEventListener("scroll", () => {
 });
 
 // ============================================================
-// SKILL BARS — animate on scroll into view
+// HEX GRID — stagger animation on scroll into view
 // ============================================================
-const skillItems = document.querySelectorAll(".skill-item");
+const hexItems = document.querySelectorAll(".hex");
 
-const skillObserver = new IntersectionObserver((entries) => {
+const hexObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const fill = entry.target.querySelector(".skill-fill");
-      const level = entry.target.getAttribute("data-level");
-      fill.style.width = level + "%";
-      skillObserver.unobserve(entry.target);
+      const hexes = entry.target.querySelectorAll(".hex");
+      hexes.forEach((hex, i) => {
+        hex.style.opacity = "0";
+        hex.style.transform = "scale(0.5)";
+        setTimeout(() => {
+          hex.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+          hex.style.opacity = "1";
+          hex.style.transform = "scale(1)";
+        }, i * 60);
+      });
+      hexObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.3 });
+}, { threshold: 0.2 });
 
-skillItems.forEach(item => skillObserver.observe(item));
+const hexGrid = document.querySelector(".hex-grid");
+if (hexGrid) hexObserver.observe(hexGrid);
 
 // ============================================================
 // SEARCH — filter project cards (projects page)

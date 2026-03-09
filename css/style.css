@@ -250,37 +250,56 @@ nav {
   align-items: start;
 }
 
-/* Skills */
+/* Skills — Hexagon Grid */
 .skills-panel { position: sticky; top: calc(var(--header-h) + 2rem); }
 
-.skills-list { display: flex; flex-direction: column; gap: 1rem; }
-
-.skill-item span {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-  color: var(--text);
-  transition: color 0.2s;
+.hex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 300px;
 }
 
-.skill-bar {
-  height: 8px;
-  background: var(--border);
-  border-radius: 4px;
-  overflow: hidden;
+.hex {
+  width: 88px;
+  height: 100px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: linear-gradient(135deg, var(--blue), var(--blue-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  transition: transform 0.25s, filter 0.25s;
+  position: relative;
 }
 
-.skill-fill {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, var(--blue), var(--blue-light));
-  border-radius: 4px;
-  transition: width 0.6s ease, opacity 0.2s;
+.hex:nth-child(even) { margin-top: 50px; margin-bottom: -50px; }
+
+.hex:hover {
+  transform: scale(1.12);
+  filter: brightness(1.2) drop-shadow(0 0 12px rgba(58,123,213,0.7));
+  z-index: 2;
 }
 
-.skill-item:hover span { color: var(--blue); }
-.skill-item:hover .skill-fill { opacity: 0.85; }
+.hex-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #fff;
+  text-align: center;
+  padding: 0 8px;
+}
+
+.hex-inner i { font-size: 1.3rem; }
+
+.hex-inner span {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 1.1;
+}
 
 /* Experience */
 .exp-card {
