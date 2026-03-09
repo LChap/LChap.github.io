@@ -245,54 +245,55 @@ nav {
 
 .experience-layout {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 280px 1fr;
   gap: 4rem;
   align-items: start;
+  grid-auto-rows: min-content;
 }
 
 /* Skills — Hexagon Grid */
-.skills-panel { position: sticky; top: calc(var(--header-h) + 2rem); }
+.skills-panel {
+  align-self: start;
+  position: sticky;
+  top: calc(var(--header-h) + 2rem);
+}
 
 .hex-grid {
   display: grid;
-  grid-template-columns: repeat(4, 72px);
-  grid-auto-rows: 62px;
-  gap: 4px;
+  grid-template-columns: repeat(3, 80px);
+  gap: 8px;
 }
 
 .hex {
-  width: 72px;
-  height: 82px;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  width: 80px;
+  height: 80px;
   background: linear-gradient(135deg, var(--blue), var(--blue-light));
+  border-radius: 14px;
+  transform: rotate(30deg);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: default;
-  transition: transform 0.25s, filter 0.25s;
-  position: relative;
-}
-
-.hex:nth-child(4n+3),
-.hex:nth-child(4n+4) {
-  margin-top: 41px;
+  transition: transform 0.25s, box-shadow 0.25s;
 }
 
 .hex:hover {
-  transform: scale(1.15);
-  filter: brightness(1.25) drop-shadow(0 0 10px rgba(58,123,213,0.8));
+  transform: rotate(30deg) scale(1.15);
+  box-shadow: 0 0 22px rgba(58,123,213,0.75);
   z-index: 2;
 }
 
 .hex-inner {
+  transform: rotate(-30deg);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3px;
+  gap: 4px;
   color: #fff;
   text-align: center;
-  padding: 0 6px;
+  width: 100%;
+  height: 100%;
 }
 
 .hex-inner i { font-size: 1.2rem; }
