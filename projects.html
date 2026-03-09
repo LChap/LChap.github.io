@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Lucas Chapelle</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="site-header">
+    <nav>
+      <div class="nav-logo">LC</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+      </ul>
+      <div class="nav-search">
+        <input type="text" id="search-input" placeholder="Search..." />
+        <i class="fas fa-search"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PROJECTS HERO -->
+  <section id="projects-hero">
+    <div class="container">
+      <h1>AI Agent Portfolio</h1>
+      <p>A collection of autonomous AI agents built with Python, Groq, and Tavily. Each agent is self-contained, free to run, and designed to solve a real problem.</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS GRID -->
+  <section id="projects">
+    <div class="container">
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-magnifying-glass"></i></div>
+          <h3>Research Summarizer</h3>
+          <p class="project-desc">
+            Give it any topic or question. It searches the web, reads the sources,
+            scores each one for credibility, and produces a structured markdown report
+            with cited findings.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>Groq</span><span>Tavily</span><span>BeautifulSoup</span>
+          </div>
+          <div class="project-highlights">
+            <p><i class="fas fa-check"></i> Source credibility scoring (High / Medium / Low)</p>
+            <p><i class="fas fa-check"></i> Adjustable depth: quick, standard, deep</p>
+            <p><i class="fas fa-check"></i> Auto-saves markdown report</p>
+          </div>
+          <a href="https://github.com/LChap/ai-agents" target="_blank" class="project-link">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-newspaper"></i></div>
+          <h3>News Briefing Agent</h3>
+          <p class="project-desc">
+            A personalized daily news assistant. Configured with your topics of interest,
+            it fetches today's stories, surfaces a top story highlight, and writes a
+            casual briefing in your preferred tone.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>Groq</span><span>Tavily</span>
+          </div>
+          <div class="project-highlights">
+            <p><i class="fas fa-check"></i> Config-driven — no command-line args needed</p>
+            <p><i class="fas fa-check"></i> Top story highlight across all topics</p>
+            <p><i class="fas fa-check"></i> Tone options: casual, professional, bullet</p>
+          </div>
+          <a href="https://github.com/LChap/ai-agents" target="_blank" class="project-link">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-scale-balanced"></i></div>
+          <h3>Debate Agent</h3>
+          <p class="project-desc">
+            Takes any debate topic, identifies the two subjects neutrally, researches
+            both sides independently, builds cases in parallel, and scores each side's
+            argument strength as a percentage.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>Groq</span><span>Tavily</span><span>Multithreading</span>
+          </div>
+          <div class="project-highlights">
+            <p><i class="fas fa-check"></i> Neutral subject extraction — phrasing-independent results</p>
+            <p><i class="fas fa-check"></i> Parallel case generation for speed</p>
+            <p><i class="fas fa-check"></i> Argument strength scored (e.g. 65% vs 35%)</p>
+          </div>
+          <a href="https://github.com/LChap/ai-agents" target="_blank" class="project-link">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://linkedin.com/in/lucas-chapelle-/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/LChap" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="mailto:lukechapeller@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>&copy; 2026 Lucas Chapelle</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
